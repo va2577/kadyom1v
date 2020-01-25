@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <main>
+    <h1>{{ .Title | upper | replaceRE "POSTS" "BLOG" }}</h1>
+    {{ partial "ads.html" . }}
+    <ul>
+      {{ range .Paginator.Pages }}
+      <li>
+        <a href="{{ .Permalink }}">
+          <article>
+            <div><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+            {{ .Title }}
+          </article>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "ads.html" . }}
+    <nav>
+      {{ template "_internal/pagination.html" . }}
+    </nav>
+  </main>
+  <style>
+    main ul {
+      list-style: none;
+    }
+    main li {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    main a {
+      color: #2f495e;
+    }
+    main nav ul.pagination {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    main nav li.active a {
+      color: #a0aec0;
+    }
+  </style>
+{{ end }}

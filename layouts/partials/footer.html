@@ -1,0 +1,39 @@
+<footer>
+  <small>&copy; 2015 {{ .Site.Title }}</small>
+  <a href="https://gohugo.io">
+    <img alt="Hugo" src="/img/hugo-logo-wide.svg">
+  </a>
+</footer>
+<style>
+  footer {
+    align-items: center;
+    border-top: #e2e8f0 solid 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 73px;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 992px;
+  }
+  footer small {
+    height: 40px;
+    line-height: 40px;
+  }
+  footer img {
+    height: 40px;
+    vertical-align: middle;
+    width: 160px;
+  }
+  @media screen and (max-width: 992px) {
+    footer {
+      margin-bottom: 64px;
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 98%;
+    }
+    footer img {
+      width: 100px;
+    }
+  }
+</style>

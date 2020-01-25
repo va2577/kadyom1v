@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <main>
+    <h1>{{ .Title }}</h1>
+    {{ if ne .Section "" }}
+      <div><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+    {{ end }}
+    {{ if .Params.image }}
+      <div><img alt="" src="/img/{{ .Params.image }}"></div>
+    {{ end }}
+    <article>
+      {{ if ne .Section "" }}
+        {{ partial "ads.html" . }}
+      {{ end }}
+      {{ .Content }}
+      {{ if ne .Section "" }}
+        {{ partial "ads.html" . }}
+      {{ end }}
+    </article>
+  </main>
+{{ end }}
